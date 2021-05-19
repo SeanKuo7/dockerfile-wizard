@@ -1,5 +1,4 @@
 set -ex
 git status
-git add -A
-git commit -m "test"
+git commit -a -m "test"
 git push
