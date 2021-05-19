@@ -1,0 +1,28 @@
+FROM golang:1.8.0
+
+#install and source
+RUN apt-get update && apt-get install -y \
+    netcat \
+    git \
+    tar \
+    gzip \
+    ca-certificaties \
+    # aboves are requested by circleci
+    libssh2 \
+    # these four are for docker
+    purge \
+    docker-ce \
+    docker-ce-cli \
+    containerd.io \
+    # build-essential is for make
+    build-essential \
+    pkg-config \
+    binutils \
+    openssl \
+    curl
+
+
+
+
+RUN go get github.com/jstemmer/go-junit-report
+
