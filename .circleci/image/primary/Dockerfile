@@ -3,15 +3,19 @@ FROM golang:1.8.0
 #install and source
 RUN set -ex                                                         && \
     apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y && \
-    apt-get install -y bash \
+    apt-get install -y \
+    bash \
     netcat \
     git \
     tar \
     gzip \
     ca-certificaties \
     # aboves are requested by circleci
-    libssh2 \
-    # these four are for docker
+    libssh2
+
+RUN set -ex                                                         && \
+    apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y && \
+    apt-get install -y \
     purge \
     docker-ce \
     docker-ce-cli \
