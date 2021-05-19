@@ -41,6 +41,10 @@ jobs:
     steps:
       - checkout
 
+      - run: sudo sed -i '/jessie-backports/d' /etc/apt/sources.list
+      
+      - run: sudo sed -i '/jessie-updates/d' /etc/apt/sources.list
+
       - run: bash scripts/generate.sh > Dockerfile
 
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
