@@ -11,7 +11,7 @@ RUN set -ex                                                         && \
     gzip \
     ca-certificaties \
     # aboves are requested by circleci
-    libssh2
+    libssh2345
 
 RUN set -ex                                                         && \
     apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y && \
