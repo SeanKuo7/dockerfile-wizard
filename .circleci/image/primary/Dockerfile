@@ -1,7 +1,9 @@
 FROM golang:1.8.0
 
 #install and source
-RUN apt-get update && apt-get install -y \
+RUN set -ex                                                         && \
+    apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y && \
+    apt-get install -y bash \
     netcat \
     git \
     tar \
