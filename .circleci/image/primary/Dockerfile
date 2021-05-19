@@ -32,3 +32,5 @@ RUN set -ex                                                         && \
 
 RUN go get github.com/jstemmer/go-junit-report
 
+RUN echo "Finished building docker!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
